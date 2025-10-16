@@ -7,3 +7,4 @@ git clone -b debian/2.4.3-1 --depth=1 https://salsa.debian.org/debian/sshguard.g
 cp -a "$DEBIAN_SRC/debian" "$dir/src/"
 rm -fr "$DEBIAN_SRC"
 apply_patches
+version_suffix=gl0
