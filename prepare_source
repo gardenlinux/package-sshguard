@@ -8,5 +8,6 @@ DEBIAN_SRC=$(mktemp -d)
 git clone -b debian/2.5.1-1 --depth=1 https://salsa.debian.org/debian/sshguard.git $DEBIAN_SRC
 cp -a "$DEBIAN_SRC/debian" "$dir/src/"
 rm -fr "$DEBIAN_SRC"
+import_upstream_patches
 apply_patches
 version=2.5.1-1
