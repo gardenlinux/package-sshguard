@@ -1,0 +1,17 @@
+--- a/debian/patches/series.orig 2025-11-10 12:37:37.952673611 +0100
++++ b/debian/patches/series      2025-11-10 12:37:55.345159708 +0100
+@@ -0,0 +1 @@
++no-manpages.patch
+--- a/debian/patches/no-manpages.patch.orig      2025-11-10 12:39:16.227419956 +0100
++++ b/debian/patches/no-manpages.patch   2025-11-10 12:22:45.575749191 +0100
+@@ -0,0 +1,10 @@
++--- a/Makefile.am.orig 2025-11-10 12:21:18.237308167 +0100
+++++ b/Makefile.am      2025-11-10 12:21:25.601514016 +0100
++@@ -1,7 +1,6 @@
++ SUBDIRS = src
++
++ EXTRA_DIST = doc examples CHANGELOG.rst CONTRIBUTING.rst INSTALL.rst README.rst
++-dist_man_MANS = doc/sshguard-setup.7 doc/sshguard.8
++
++ if BUILD_MAN
++ SUFFIXES=.rst
