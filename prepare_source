@@ -1,6 +1,9 @@
 apt-get install --no-install-recommends -y curl ca-certificates
 
-curl -sSLf https://github.com/SSHGuard/sshguard/archive/refs/tags/v2.5.1.tar.gz | gzip -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
+DOWNLOAD_URL="https://downloads.sourceforge.net/project/sshguard/sshguard/2.5.1/sshguard-2.5.1.tar.gz"
+# DOWNLOAD_URL="https://altushost-swe.dl.sourceforge.net/project/sshguard/sshguard/2.5.1/sshguard-2.5.1.tar.gz"
+
+curl -sSLf $DOWNLOAD_URL | gzip -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
 
 DEBIAN_SRC=$(mktemp -d)
 git clone -b debian/2.4.3-1 --depth=1 https://salsa.debian.org/debian/sshguard.git $DEBIAN_SRC
