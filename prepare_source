@@ -1,10 +1,1 @@
-apt-get install --no-install-recommends -y curl ca-certificates
-
-curl -sSLf https://sourceforge.net/projects/sshguard/files/sshguard/2.5.1/sshguard-2.5.1.tar.gz/download | gzip -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
-
-DEBIAN_SRC=$(mktemp -d)
-git clone -b debian/2.4.3-1 --depth=1 https://salsa.debian.org/debian/sshguard.git $DEBIAN_SRC
-cp -a "$DEBIAN_SRC/debian" "$dir/src/"
-rm -fr "$DEBIAN_SRC"
-apply_patches
-version=2.5.1-1
+git_src --branch debian/2.5.1-1 https://salsa.debian.org/debian/sshguard.git
