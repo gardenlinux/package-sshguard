@@ -1,6 +1,3 @@
-version=2.5.1-1
 salsa_repo_commit="19cee4d569152f2b6efa62510ab617f390be3ae0" # debian/2.5.1-1
 
 git_src_commit $salsa_repo_commit https://salsa.debian.org/debian/sshguard.git
-
-apply_patches
